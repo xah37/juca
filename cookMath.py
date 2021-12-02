@@ -16,12 +16,14 @@ def cups_to_tbsp(n):
 
 
 def print_conv_table():
-    table = Table(title="Volume Conversion Chart")
+    table = Table(title="Volume Conversion Chart", box=box.HEAVY_EDGE)
 
-    table.add_column("Tsp.", justify="right", style="cyan", no_wrap=True)
-    table.add_column("Tbsp.", justify="right", style="cyan", no_wrap=True)
-    table.add_column("Ounces", justify="center", style="red",)
-    table.add_column("Cups", justify="center", style="red", no_wrap=True)
+    table.add_column("Tsp.", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Tbsp.", justify="center",
+                     style="bold blue", no_wrap=True)
+    table.add_column("Ounces", justify="center", style="bold red",)
+    table.add_column("Cups", justify="center",
+                     style="bold yellow", no_wrap=True)
 
     table.add_row(
         '3',
