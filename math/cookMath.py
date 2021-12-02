@@ -1,6 +1,7 @@
 from rich.console import Console
 from rich.table import Table
 from rich import box
+import allMenus
 
 
 # ADD SOME MORE COOKING MATH
@@ -52,6 +53,4 @@ def print_conv_table():
 
     console = Console()
     console.print(table)
-
-
-print_conv_table()
+    allMenus.print_main_menu()

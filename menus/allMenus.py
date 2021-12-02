@@ -1,4 +1,5 @@
 import sys
+from typing import ParamSpecArgs
 from rich import print
 from rich.prompt import Prompt
 import tempMath
@@ -15,8 +16,7 @@ def temp_menu():
     1. CONVERT CELSIUS TO FAHRENHEIT
     2. CONVERT FAHRENHEIT TO CELSIUS
     3. CALCULATE DEW POINT
-
-       """)
+""")
 
 
 def currency_menu():
@@ -24,7 +24,7 @@ def currency_menu():
     print(header.center(50, OFFSET_CHAR))
     print("""
     1. CONVERT FROM USD TO DENOM OF YOUR CHOICE
-    """)
+""")
 
 
 def cooking_menu():
@@ -39,10 +39,23 @@ def cooking_menu():
     9. EXIT PROGRAM
 
     """)
+
     menu_choice = Prompt.ask("Enter your choice", choices=[
                              '1', '2', '3', '8', '9'])
-    if menu_choice == '1':
-        cookMath.print_conv_table()
+
+    while True:
+        if menu_choice == '1':
+            cookMath.print_conv_table()
+        elif menu_choice == '2':
+            i = int(input('Enter the amount of gallons to convert to cups '))
+            print(f"{i} is {cookMath.gal_to_cups(i)}")
+        elif menu_choice == '3':
+            pass
+        elif menu_choice == '8':
+            print_main_menu()
+        elif menu_choice == '9':
+            print('Quitting!')
+            sys.exit()
 
 
 def print_main_menu():
@@ -62,9 +75,9 @@ def menu():
     print_main_menu()
     menu_choice = 0
 
-    while menu_choice != 9:
+    while True:
         menu_choice = Prompt.ask("Enter your choice", choices=[
-            '1', '2', '3',  '9'
+            '1', '2', '3', '9'
         ])
 
         if menu_choice == '1':
