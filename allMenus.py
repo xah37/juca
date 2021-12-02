@@ -2,6 +2,7 @@ import sys
 from rich import print
 from rich.prompt import Prompt
 import tempMath
+import cookMath
 
 OFFSET_CHAR = '-'
 
@@ -33,7 +34,15 @@ def cooking_menu():
     1. PRINT TABLE OF QUICK VOLUME CONVERSIONS.
     2. CONVERT GALLONS TO CUPS
     3. CONVERT CUPS TO TABLESPOONS
+
+    8. BACK TO MAIN MENU
+    9. EXIT PROGRAM
+
     """)
+    menu_choice = Prompt.ask("Enter your choice", choices=[
+                             '1', '2', '3', '8', '9'])
+    if menu_choice == '1':
+        cookMath.print_conv_table()
 
 
 def print_main_menu():
