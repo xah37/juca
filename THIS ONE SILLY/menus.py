@@ -1,11 +1,18 @@
-import sys
-from typing import ParamSpecArgs
-from rich import print
 from rich.prompt import Prompt
-import tempMath
-import cookMath
+import sys
 
-OFFSET_CHAR = '-'
+
+def print_main_menu():
+    """Emulate a 'main' menu"""
+    header = "Main Menu"
+    print(header.center(50, '='))
+    print("""
+    1. TEMPERATURE / WEATHER
+    2. CURRENCY
+    3. COOKING
+    
+    9. EXIT PROGRAM
+    """)
 
 
 def temp_menu():
@@ -56,19 +63,6 @@ def cooking_menu():
         elif menu_choice == '9':
             print('Quitting!')
             sys.exit()
-
-
-def print_main_menu():
-    """Emulate a 'main' menu"""
-    header = "Main Menu"
-    print(header.center(50, OFFSET_CHAR))
-    print("""
-    1. TEMPERATURE / WEATHER
-    2. CURRENCY
-    3. COOKING
-    
-    9. EXIT PROGRAM
-    """)
 
 
 def menu():
