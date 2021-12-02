@@ -1,4 +1,4 @@
-def temp_f_to_c(n):
+def f_to_c(n):
     return (n-32) * 5/9
 
 
