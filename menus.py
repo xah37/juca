@@ -1,6 +1,10 @@
+from rich import prompt
 from rich.prompt import Prompt
 from rich import print
 import sys
+
+# My fancy new Temperature class
+from conversions import Temperature
 
 # Custom
 import tabular
@@ -60,13 +64,17 @@ def temperatureMenu():
             '1', '2', '3', 'b', 'q', ])
 
         if menu_choice == '1':
-            pass
+            celT = int(input('What degree Celsius? '))
+            jeff = Temperature(0, celT)
+            jeff.fromCelsius()
         elif menu_choice == '2':
-            pass
+            farT = int(input('What degree Fahrenheit? '))
+            jeff = Temperature(farT, 0)
+            jeff.fromFahrenheit()
         elif menu_choice == '3':
-            pass
+            print('lol not yet bruh')
         elif menu_choice == 'b':
-            pass
+            mainMenu()
         elif menu_choice == 'q':
             print('exiting')
             sys.exit()
@@ -127,7 +135,7 @@ def mainMenu():
             '1', '2', '3', 'b', 'q', ])
 
         if menu_choice == '1':
-            pass
+            temperatureMenu()
         elif menu_choice == '2':
             pass
         elif menu_choice == '3':
