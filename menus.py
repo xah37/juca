@@ -4,7 +4,7 @@ from rich import print
 import sys
 
 # My fancy new Temperature class
-from conversions import Temperature
+from conversions import Temperature, Cooking
 
 
 def cookingMenu():
@@ -66,6 +66,7 @@ def temperatureMenu():
             jeff.fromCelsius()
         elif menu_choice == '2':
             farT = int(input('What degree Fahrenheit? '))
+            # prompt.IntPrompt('Gimme numbah')
             jeff = Temperature(farT, 0)
             jeff.fromFahrenheit()
         elif menu_choice == '3':
@@ -124,21 +125,18 @@ def mainMenu():
         print(":moneybag: [2] Currency-related conversions")
         print(":cooking: [3] Cooking-related conversions.")
         print("")
-        print(f":back:\\[b] Return to the Main Menu")
-        print(f":stop_sign:\\[q] Exit the program.")
+        print(":stop_sign:\\[q] Exit the program.")
 
         # Get users choice
         menu_choice = Prompt.ask("Enter your choice", choices=[
-            '1', '2', '3', 'b', 'q', ])
+                                 '1', '2', '3', 'q', ])
 
         if menu_choice == '1':
             temperatureMenu()
         elif menu_choice == '2':
             pass
         elif menu_choice == '3':
-            pass
-        elif menu_choice == 'b':
-            pass
+            cookingMenu()
         elif menu_choice == 'q':
             print('exiting')
             sys.exit()
