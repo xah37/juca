@@ -16,6 +16,6 @@ class Temperature():
         # print((self.t - 32) * 5/9)
 
 
-halp = Temperature(212, 100)
-halp.fromCelsius()
-halp.fromFahrenheit()
+# halp = Temperature(212, 100)
+# halp.fromCelsius()
+# halp.fromFahrenheit()
