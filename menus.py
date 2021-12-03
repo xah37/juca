@@ -6,9 +6,6 @@ import sys
 # My fancy new Temperature class
 from conversions import Temperature
 
-# Custom
-import tabular
-
 
 def cookingMenu():
     # Initial value for variable other than 'quit'
@@ -72,7 +69,7 @@ def temperatureMenu():
             jeff = Temperature(farT, 0)
             jeff.fromFahrenheit()
         elif menu_choice == '3':
-            print('lol not yet bruh')
+            print('Work In Progress bb.')
         elif menu_choice == 'b':
             mainMenu()
         elif menu_choice == 'q':
