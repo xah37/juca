@@ -1,4 +1,7 @@
 from rich import print
+from rich.console import Console
+from rich.table import Table
+from rich import box
 
 
 class Temperature():
@@ -16,6 +19,52 @@ class Temperature():
         # print((self.t - 32) * 5/9)
 
 
-# halp = Temperature(212, 100)
-# halp.fromCelsius()
-# halp.fromFahrenheit()
+class Cooking():
+
+    def __init__(self, gals, cups):
+        self.gals = gals
+        self.cups = cups
+
+    def fromGals(self):
+        print(f'{self.gals} gallons is {self.gals*16} cups.')
+
+    def fromCups(self):
+        print(f"{self.cups} cups is {self.cups/16} gallons.")
+
+    def printConvTable(self):
+        table = Table(title="Volume Conversion Chart", box=box.HEAVY_EDGE)
+
+        table.add_column("Tsp.", justify="center", style="cyan", no_wrap=True)
+        table.add_column("Tbsp.", justify="center",
+                         style="bold blue", no_wrap=True)
+        table.add_column("Ounces", justify="center", style="bold red",)
+        table.add_column("Cups", justify="center",
+                         style="bold yellow", no_wrap=True)
+
+        table.add_row(
+            '3',
+            '1',
+            '1/2',
+            '1/16'
+        )
+        table.add_row(
+            '12',
+            '4',
+            '2',
+            '1/4'
+        )
+        table.add_row(
+            '24',
+            "8",
+            "4",
+            "1/2",
+        )
+        table.add_row(
+            '48',
+            '16',
+            '8',
+            '1',
+        )
+
+        console = Console()
+        console.print(table)
