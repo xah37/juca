@@ -27,13 +27,18 @@ def cookingMenu():
             '1', '2', '3', 'b', 'q', ])
 
         if menu_choice == '1':
-            pass
+            x = Cooking(0, 0)
+            x.printConvTable()
         elif menu_choice == '2':
-            pass
+            gallons = int(input('How many gallons to convert to cups? '))
+            x = Cooking(gallons, 0)
+            x.fromGals()
         elif menu_choice == '3':
-            pass
+            cups = int(input('How many cups to convert to tablespoons? '))
+            x = Cooking(0, cups)
+            x.fromCups()
         elif menu_choice == 'b':
-            pass
+            mainMenu()
         elif menu_choice == 'q':
             print('exiting')
             sys.exit()
@@ -65,9 +70,9 @@ def temperatureMenu():
             jeff = Temperature(0, celT)
             jeff.fromCelsius()
         elif menu_choice == '2':
-            farT = int(input('What degree Fahrenheit? '))
-            # prompt.IntPrompt('Gimme numbah')
-            jeff = Temperature(farT, 0)
+            t = int(input('What degree Fahrenheit? '))
+
+            jeff = Temperature(t, 0)
             jeff.fromFahrenheit()
         elif menu_choice == '3':
             print('Work In Progress bb.')

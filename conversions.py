@@ -29,7 +29,7 @@ class Cooking():
         print(f'{self.gals} gallons is {self.gals*16} cups.')
 
     def fromCups(self):
-        print(f"{self.cups} cups is {self.cups/16} gallons.")
+        print(f"{self.cups} cups is {self.cups*16} tablespoons.")
 
     def printConvTable(self):
         table = Table(title="Volume Conversion Chart", box=box.HEAVY_EDGE)

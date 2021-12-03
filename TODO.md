@@ -17,7 +17,7 @@
 
 # MENUS
 ## CookingMenu
-* Implement Cooking class into menu options
+* ~~Implement Cooking class into menu options~~
 
 ## Temperature Menu
 - need to update if we add more conversions, and dew point
