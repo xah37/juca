@@ -1,6 +1,8 @@
 from rich.console import Console
 from rich.table import Table
 from rich import box
+import conversions
+conversions.Temperature()
 
 
 def print_conv_table():
